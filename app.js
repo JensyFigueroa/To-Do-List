@@ -10,6 +10,9 @@ let id = 0;
 /* El DOMContentLoaded es por si hay algo en collectionToDo 
 lo muestre al momento de cargar el html */
 document.addEventListener('DOMContentLoaded', ()=>{
+    if (localStorage.getItem('toDo')) {
+        collectionToDo = JSON.parse(localStorage.getItem('toDo'))
+    }
     showToDo()
 })
 
@@ -54,6 +57,8 @@ const addToDo = (e) =>{
 }
 
 const showToDo = () =>{
+
+    localStorage.setItem('toDo',JSON.stringify(collectionToDo))
 
     if (Object.values(collectionToDo).length === 0) {
         boxList.innerHTML= `<div class="alert-Dark">
