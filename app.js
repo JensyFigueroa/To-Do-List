@@ -60,9 +60,17 @@ const showToDo = () =>{
         const clone = template.cloneNode(true);
         // console.log(clone)
         clone.querySelector('p').textContent = etoDo.toDo;
-        clone.querySelectorAll('.check')[0].dataset.id = etoDo.toDo;
-        clone.querySelectorAll('.delete')[0].dataset.id = etoDo.toDo;
-        
+
+        if (etoDo.state) {
+            clone.querySelector('.listToDo').classList.replace('colorWarning','colorDanger')
+            console.log('dentro del if')
+            clone.querySelectorAll('.fa-solid')[0].classList.replace('fa-circle-check','fa-rotate-right')
+            
+        }
+
+        clone.querySelectorAll('.fa-solid')[0].dataset.id = etoDo.id;
+        clone.querySelectorAll('.delete')[0].dataset.id = etoDo.id;
+       
         fragment.appendChild(clone)
     })
 
@@ -71,7 +79,7 @@ const showToDo = () =>{
 
 const btnAction = (e) => {
 //  console.log(e.target.classList.contains('check'))
-    if (e.target.classList.contains('check')) {
+    if (e.target.classList.contains('fa-circle-check')) {
         collectionToDo[e.target.dataset.id].state = true;
         showToDo()
         // console.log(collectionToDo)
@@ -80,6 +88,11 @@ const btnAction = (e) => {
         delete collectionToDo[e.target.dataset.id]
         showToDo()
         // console.log(collectionToDo)
+    }
+
+    if (e.target.classList.contains('fa-rotate-right')) {
+        collectionToDo[e.target.dataset.id].state = false;
+        showToDo()
     }
 
     /* Activa solo los eventos que se encuentren dentro este contendor  */

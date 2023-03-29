@@ -275,12 +275,19 @@ input[type="text"] {
     align-items: center;
     width: 60%;
     height: 50px;
-    background-color: #eae879;
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
     box-shadow: 5px 5px 5px #333;
+}
+
+.colorWarning{
+    background-color: rgba(118, 166, 255, 0.68);
+}
+
+.colorDanger{
+    background-color: rgba(250, 131, 131, 0.402);
 }
 
 .listToDo p{
@@ -291,8 +298,12 @@ input[type="text"] {
     margin: 0;
 }
 
-.listToDo h3 .check{
+.listToDo h3 .fa-circle-check{
     color: green;
+}
+
+.listToDo h3 .fa-rotate-right{
+    color: blue;
 }
 
 .listToDo h3 .trash{
