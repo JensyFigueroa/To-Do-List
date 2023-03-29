@@ -64,7 +64,8 @@ const showToDo = () =>{
         if (etoDo.state) {
             clone.querySelector('.listToDo').classList.replace('colorWarning','colorDanger')
             console.log('dentro del if')
-            clone.querySelectorAll('.fa-solid')[0].classList.replace('fa-circle-check','fa-rotate-right')
+            clone.querySelectorAll('.fa-solid')[0].classList.replace('fa-circle-check','fa-rotate-right');
+            clone.querySelector('p').style.textDecoration = 'Line-through'
             
         }
 
