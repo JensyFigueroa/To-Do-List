@@ -269,6 +269,24 @@ input[type="text"] {
                ****** LIST TO DO*******
 ============================================= */
 
+.alert-Dark{
+    width: 60%;
+    height: 50px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #333;
+    text-align: center;
+    background-color: rgba(86, 86, 86, 0.68);
+    color: white;
+    font-weight: 600;
+    font-style: italic; letter-spacing: 1px;
+
+    
+}
+
 .listToDo {
     display: flex;
     justify-content:space-around;

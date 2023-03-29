@@ -54,6 +54,14 @@ const addToDo = (e) =>{
 }
 
 const showToDo = () =>{
+
+    if (Object.values(collectionToDo).length === 0) {
+        boxList.innerHTML= `<div class="alert-Dark">
+        No hay tareas pendientes 👏👏👏
+    </div>`
+        return
+    }
+
     boxList.innerHTML = '';
     Object.values(collectionToDo).forEach( etoDo =>{
         //  console.log(etoDo.toDo)
@@ -88,7 +96,7 @@ const btnAction = (e) => {
     if (e.target.classList.contains('delete')) {
         delete collectionToDo[e.target.dataset.id]
         showToDo()
-        // console.log(collectionToDo)
+        //  console.log(collectionToDo)
     }
 
     if (e.target.classList.contains('fa-rotate-right')) {
